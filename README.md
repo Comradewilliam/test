@@ -49,6 +49,7 @@ Response returns `token` — send it as `Authorization: Bearer {token}` on every
 | POST   | /api/products/{id}/rate     | Rate a product (fails if already rated)   |
 | PUT    | /api/products/{id}/rate     | Change an existing rating                 |
 | DELETE | /api/products/{id}/rate     | Remove your rating                        |
+| POST   | /api/patient-registration   | (Bonus Task) Register patient with Gpitg Hospital |
 
 ### Rate a product
 ```bash
@@ -81,6 +82,29 @@ Each product includes:
 - `user_rating` — the logged-in user's own rating (null if they haven't rated it)
 - `time_passed` — minutes since the user rated it (null if not rated)
 - `active_time` — `"active"` if `time_passed > 30`, else `"inactive"` (null if not rated)
+
+### (Bonus Task) Register a Patient with Gpitg Hospital
+```bash
+curl -X POST http://localhost:8000/api/patient-registration \
+  -H "Authorization: Bearer {token}" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{
+    "Sponsor_ID": "1",
+    "Patient_Name": "ngenzi ngenzi",
+    "Date_Of_Birth": "2022-07-02",
+    "Gender": "Male",
+    "Visit_Type_ID": "1",
+    "Type_Of_Check_In": "1",
+    "branchId": "1",
+    "Employee_ID": "46",
+    "pf3": null,
+    "Diceased": "no",
+    "Referral_Status": null
+  }'
+```
+
+Response returns `message` and `Check_In_Date_And_Time`.
 
 ## Business rules implemented
 
