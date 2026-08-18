@@ -20,12 +20,12 @@ php artisan serve
 > `composer install` against a fresh Laravel 11 install will pull in the
 > framework + Sanctum and everything above will work as-is.
 
-Seeded users (password for all: `password`):
-- john@example.com
-- jane@example.com
-- thomas@example.com
+Seeded users (password for all: `QAZzaq123`):
+- young@test.com
+- willy@test.com
+- sadiki@test.com
 
-Seeded products: Wireless Mouse, Mechanical Keyboard, USB-C Hub, Laptop Stand, Webcam 1080p.
+Seeded products (10 items): Wireless Mouse, Mechanical Keyboard, USB-C Hub, Laptop Stand, Webcam 1080p, Noise Cancelling Headphones, 27-inch 4K Monitor, Ergonomic Office Chair, Portable SSD 1TB, Desk Mat XXL.
 
 ## Auth
 
@@ -34,7 +34,7 @@ All endpoints require a Sanctum bearer token, except `/api/login`.
 ```bash
 curl -X POST http://localhost:8000/api/login \
   -H "Accept: application/json" \
-  -d "email=john@example.com" -d "password=password"
+  -d "email=young@test.com" -d "password=QAZzaq123"
 ```
 
 Response returns `token` — send it as `Authorization: Bearer {token}` on every other call.
