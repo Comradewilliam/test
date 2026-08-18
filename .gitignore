@@ -1,0 +1,16 @@
+/vendor
+/.env
+/.env.backup
+/.env.production
+/public/storage
+/public/hot
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+.phpunit.result.cache
+*.sqlite
+*.sqlite-journal
+.DS_Store
+Thumbs.db
