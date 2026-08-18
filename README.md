@@ -130,3 +130,10 @@ database/seeders/ProductSeeder.php
 database/seeders/DatabaseSeeder.php
 routes/api.php
 ```
+
+## Candidate Information
+
+- **Name**: Young William SADIKI
+- **Email**: mrsadikiy@gmail.com
+- **Phone**: 0617065852
+
