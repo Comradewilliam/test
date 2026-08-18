@@ -12,7 +12,7 @@ cp .env.example .env
 php artisan key:generate
 php artisan sanctum:install   # publishes sanctum migration (if not already present)
 php artisan migrate --seed
-php artisan serve
+php artisan serve --port=4321
 ```
 
 > Note: this project was generated as a lean Laravel skeleton (no `vendor/`,
@@ -32,7 +32,7 @@ Seeded products (10 items): Wireless Mouse, Mechanical Keyboard, USB-C Hub, Lapt
 All endpoints require a Sanctum bearer token, except `/api/login`.
 
 ```bash
-curl -X POST http://localhost:8000/api/login \
+curl -X POST http://localhost:4321/api/login \
   -H "Accept: application/json" \
   -d "email=young@test.com" -d "password=QAZzaq123"
 ```
@@ -53,27 +53,27 @@ Response returns `token` — send it as `Authorization: Bearer {token}` on every
 
 ### Rate a product
 ```bash
-curl -X POST http://localhost:8000/api/products/1/rate \
+curl -X POST http://localhost:4321/api/products/1/rate \
   -H "Authorization: Bearer {token}" -H "Accept: application/json" \
   -d "rating=4"
 ```
 
 ### Change a rating
 ```bash
-curl -X PUT http://localhost:8000/api/products/1/rate \
+curl -X PUT http://localhost:4321/api/products/1/rate \
   -H "Authorization: Bearer {token}" -H "Accept: application/json" \
   -d "rating=5"
 ```
 
 ### Remove a rating
 ```bash
-curl -X DELETE http://localhost:8000/api/products/1/rate \
+curl -X DELETE http://localhost:4321/api/products/1/rate \
   -H "Authorization: Bearer {token}" -H "Accept: application/json"
 ```
 
 ### List products
 ```bash
-curl http://localhost:8000/api/products \
+curl http://localhost:4321/api/products \
   -H "Authorization: Bearer {token}" -H "Accept: application/json"
 ```
 
@@ -85,7 +85,7 @@ Each product includes:
 
 ### (Bonus Task) Register a Patient with Gpitg Hospital
 ```bash
-curl -X POST http://localhost:8000/api/patient-registration \
+curl -X POST http://localhost:4321/api/patient-registration \
   -H "Authorization: Bearer {token}" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
